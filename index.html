@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>Un mostro per dungeon world</title>
+    <body ng-app="DWMonsterCreator">
+        <div class="container" ng-controller="userController">
+            <h1 class="text-center noprint">Un mostro per dungeon world</h1>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 printable">
+
+                    <div class="form-group">
+                        <label>Nome del mostro</label>
+                        <input type="text" ng-model="mostro.Nome" class="form-control text-center"  />
+                    </div>     
+                    <div class="form-group">
+                        <label>Etichette generiche, di organizzazione e di dimensione</label>
+                        <textarea  ng-model="mostro.Etichette" class="form-control msd-elastic" ></textarea>
+                        <!--<input type="text" ng-model="mostro.Etichette" class="form-control "  />-->
+                    </div>      
+
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <label>Attacco (danni)</label>
+                                <textarea ng-model="mostro.Attacco" class="form-control"  ></textarea>
+                            </div> 
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <label>Etichette dell'attacco</label>
+                                <textarea ng-model="mostro.EtichetteAttacco" class="form-control msd-elastic"  ></textarea>
+                            </div>   
+                        </div> 
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <div class="form-group">
+                                <label>Punti ferita</label>
+                                <input type="text" ng-model="mostro.PF" class="form-control text-center"  />
+                            </div>  
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <div class="form-group">
+                                <label>PF Attuali</label>
+                                <input type="text" ng-model="mostro.PFAttuali" class="form-control"  />
+                            </div>  
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <div class="form-group">
+                                <label>Armatura</label>
+                                <input type="text" ng-model="mostro.Armatura" class="form-control text-center"  />
+                            </div>  
+                        </div> 
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Qualit&agrave; speciali</label>
+                        <input type="text" ng-model="mostro.Qualita" class="form-control"  />
+                    </div>  
+                    <div class="form-group">
+                        <label>Istinto</label>
+                        <input type="text" ng-model="mostro.Istinto" class="form-control"  />
+                    </div>  
+                    
+
+                    <div class="form-group">
+                        <label>Mosse del mostro</label>
+                        <textarea  ng-model="mostro.Mosse" class="form-control msd-elastic alte"  ></textarea>
+                    </div>  
+                    <div class="form-group">
+                        <label>Descrizione</label>
+                        <textarea ng-model="mostro.Descrizione" class="form-control msd-elastic alte"  ></textarea>
+                    </div>  
+                    <div class="form-group">
+                        <label>Tesoro</label>
+                        <textarea ng-model="mostro.Tesoro" class="form-control msd-elastic alte"  ></textarea>
+                    </div>  
+                    <div class="text-center noprint">
+                        <button class="btn" onclick="window.print()" >Stampa</button>
+                        <button class="btn" ng-click="svuota()" >Svuota</button>
+                        <button class="btn" ng-click="tesoro()" >Genera tesoro</button>
+                    </div>
+                    
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 noprint">
+
+                    <h3>Qual'&egrave; il suo comportamento pi&ugrave; noto?</h3>
+                    Scrivi una mossa del mostro che descriva ci&ograve; che fa.
+
+                    <h3>Cosa vuole che causa problemi ad altri?</h3>
+                    Questo &egrave; il suo istinto, ad esempio "distruggere la civilit&agrave;" o "assassinare i discendenti maschi del Re". Scrivilo come un'azione intenzionale
+
+                    <h3>Come combatte o caccia di solito?</h3>
+                    <div ng-repeat="elemento in mostro.branco"  >
+                        <input type="radio" name="branco"  ng-value="{{$index}}" ng-model="mostro.sceltaBranco" ng-click="impostaEtichette()" />
+                        <span ng-bind-html="elemento.Testo | sanitize"></span>
+                    </div>
+                    <h3>Quanto &egrave; grande?</h3>
+                    <div ng-repeat="elemento in mostro.dimensione">
+                        <input name="dimensione" type="radio" value="{{$index}}" ng-model="mostro.sceltaDimensione" ng-click="impostaEtichette()" />
+                        <span ng-bind-html="elemento.Testo | sanitize"></span>
+                    </div >
+
+                    <h3>Qual'&egrave; la sua protezione pi&ugrave; efficace?</h3>
+                    <div ng-repeat="elemento in mostro.armatura" >
+                        <input name="armatura" type="radio" value="{{$index}}" ng-model="mostro.sceltaArmatura"  ng-click="impostaEtichette()" />
+                        <span ng-bind-html="elemento.Testo | sanitize"></span>
+                    </div >
+
+                    <h3>Per cosa &egrave; noto?</h3>
+                    <div ng-repeat="elemento in mostro.notorieta">
+                        <input type="checkbox" ng-model="mostro.notorieta[$index].Checked" ng-click="impostaEtichette()" />
+                        <span ng-bind-html="elemento.Testo | sanitize"></span>
+                    </div >
+
+                    <h3>Qual'&egrave; il suo modo di attaccare?</h3>
+                    <p> Annotalo di fianco al danno della creatura. Le risposte pi&ugrave; comuni sono: un tipo d'arma, artigli, un incantesimo in particolare. Poi rispondi a queste domande a proposito:</p>
+                    <div ng-repeat="elemento in mostro.attacco">
+                        <input type="checkbox" ng-model="mostro.attacco[$index].Checked" ng-click="impostaEtichette()" />
+                        <span ng-bind-html="elemento.Testo | sanitize"></span>
+                    </div >
+                    <h3>Quali di queste frasi lo descrivono?</h3>
+                    <div ng-repeat="elemento in mostro.descrizione">
+                        <input type="checkbox" ng-model="mostro.descrizione[$index].Checked" ng-click="impostaEtichette()" />
+                        <span ng-bind-html="elemento.Testo | sanitize"></span>
+                    </div >
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+        </div>
+
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+        <script src="js/script.js"></script>
+
+        <script src="js/ui-bootstrap-tpls-2.5.0.min.js"></script>
+
+        <script src="js/elastic.js"></script>
+        
+        <script type="text/javascript">
+            google_color_border = "#003399";
+            google_color_bg = "#FFFFFF";
+            google_color_link = "#0033CC";
+            google_color_url = "#008000";
+            google_color_text = "#000000";
+            google_ui_features = "rc:0";
+            document.write('<s'+'cript type="text/javascript" src="http://ad.altervista.org/js.ad/size=300X250/?ref='+encodeURIComponent(location.hostname+location.pathname)+'&r='+new Date().getTime()+'"></s'+'cript>');
+        </script>
+    </body>
+</html>
