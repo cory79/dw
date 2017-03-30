@@ -1,0 +1,97 @@
+
+{
+    "dado_list": [
+        {"Dado": "d4", "Lista": "d4_list", "Input": "d4_input", "Scelta": "d4_scelta", "Tipo": "radio", "Titolo": "Disposition towards you"},
+        {"Dado": "d6", "Lista": "d6_list", "Input": "d6_input", "Scelta": "d6_scelta", "Tipo": "radio", "Titolo": "Alignment"},
+        {"Dado": "d8", "Lista": "d8_list", "Input": "d8_input", "Scelta": "d8_scelta", "Tipo": "radio", "Titolo": "What 'class' or profession (skill set)"},
+        {"Dado": "d10", "Lista": "d10_list", "Input": "d10_input", "Scelta": "d10_scelta", "Tipo": "checkbox", "Titolo": "Where is he/she from?"},
+        {"Dado": "d12", "Lista": "d12_list", "Input": "d12_input", "Scelta": "d12_scelta", "Tipo": "radio", "Titolo": "What's he/she doing right now?"},
+        {"Dado": "d20", "Lista": "d20_list", "Input": "d20_input", "Scelta": "d20_scelta", "Tipo": "checkbox", "Titolo": "This NPC knows..."}],
+    "OneRollThing": {
+        "Nome": "",
+        "Descrizione": "",
+        "d4_input": "",
+        "d6_input": "",
+        "d8_input": "",
+        "d10_input": "",
+        "d12_input": "",
+        "d20_input": "",
+        "d4_scelta": -1,
+        "d6_scelta": -1,
+        "d8_scelta": -1,
+        "d10_scelta": -1,
+        "d12_scelta": -1,
+        "d20_scelta": -1,
+        "d4_list": [
+            {"Risultato": 1, "Checked": false, "Testo": "Opposes you"},
+            {"Risultato": 2, "Checked": false, "Testo": "Dislike you, but will help... for a price"},
+            {"Risultato": 3, "Checked": false, "Testo": "Likes you, but won't help for free."},
+            {"Risultato": 4, "Checked": false, "Testo": "Supports you"}
+        ],
+        "d6_list": [
+            {"Risultato": 1, "Checked": false, "Testo": "Good"},
+            {"Risultato": 2, "Checked": false, "Testo": "Lawful"},
+            {"Risultato": 3, "Checked": false, "Testo": "Neutral"},
+            {"Risultato": 4, "Checked": false, "Testo": "Chaotic"},
+            {"Risultato": 5, "Checked": false, "Testo": "Evil"},
+            {"Risultato": 6, "Checked": false, "Testo": "Choose"}
+        ],
+        "d8_list": [
+            {"Risultato": 1, "Checked": false, "Testo": "Bard / entertainer"},
+            {"Risultato": 2, "Checked": false, "Testo": "Cleric / acolyte"},
+            {"Risultato": 3, "Checked": false, "Testo": "Druid / proffesional (baker, blacksmith, farmer etc.)"},
+            {"Risultato": 4, "Checked": false, "Testo": "Fighter / soldier"},
+            {"Risultato": 5, "Checked": false, "Testo": "Paladin / guard, guardian"},
+            {"Risultato": 6, "Checked": false, "Testo": "Ranger / hunter"},
+            {"Risultato": 7, "Checked": false, "Testo": "Thief / criminal"},
+            {"Risultato": 8, "Checked": false, "Testo": "Wizard / scholar"}
+        ],
+        "d10_list": [
+            {"Risultato": 1, "Checked": false, "Testo": "Whever you're at right now"},
+            {"Risultato": 2, "Checked": false, "Testo": "A neighboring region"},
+            {"Risultato": 3, "Checked": false, "Testo": "The same place a PC is from"},
+            {"Risultato": 4, "Checked": false, "Testo": "A far away place"},
+            {"Risultato": 5, "Checked": false, "Testo": "A local guild"},
+            {"Risultato": 6, "Checked": false, "Testo": "An exotic location"},
+            {"Risultato": 7, "Checked": false, "Testo": "A large island"},
+            {"Risultato": 8, "Checked": false, "Testo": "An underground or underwater city"},
+            {"Risultato": 9, "Checked": false, "Testo": "The shadows..."},
+            {"Risultato": 10, "Checked": false, "Testo": "Roll again, and that place no longer exists!", "Reroll": 1}
+        ],
+        "d12_list": [
+            {"Risultato": 1, "Checked": false, "Testo": "Seeking a PC"},
+            {"Risultato": 2, "Checked": false, "Testo": "Searching for something"},
+            {"Risultato": 3, "Checked": false, "Testo": "Passing through to somewhere else"},
+            {"Risultato": 4, "Checked": false, "Testo": "Whatever they're trained to do"},
+            {"Risultato": 5, "Checked": false, "Testo": "Running away / hiding from someone / something"},
+            {"Risultato": 6, "Checked": false, "Testo": "Delivering a message"},
+            {"Risultato": 7, "Checked": false, "Testo": "Training (him/herself or someone else)"},
+            {"Risultato": 8, "Checked": false, "Testo": "Carousing"},
+            {"Risultato": 9, "Checked": false, "Testo": "Killing someone, or attempting to"},
+            {"Risultato": 10, "Checked": false, "Testo": "Stealing something, or attempting to"},
+            {"Risultato": 11, "Checked": false, "Testo": "Purchasing / selling something, or attempting to"},
+            {"Risultato": 12, "Checked": false, "Testo": "Investingating something"}
+        ],
+        "d20_list": [
+            {"Risultato": 1, "Checked": false, "Testo": "someone who knows somthing. Roll again to find out what", "Reroll": 1},
+            {"Risultato": 2, "Checked": false, "Testo": "where someone was taken"},
+            {"Risultato": 3, "Checked": false, "Testo": "who took someone"},
+            {"Risultato": 4, "Checked": false, "Testo": "who the scapegoat is"},
+            {"Risultato": 5, "Checked": false, "Testo": "why no-one is talking about it"},
+            {"Risultato": 6, "Checked": false, "Testo": "how to make someone disappear"},
+            {"Risultato": 7, "Checked": false, "Testo": "how to get into that place"},
+            {"Risultato": 8, "Checked": false, "Testo": "when it's going to happen"},
+            {"Risultato": 9, "Checked": false, "Testo": "who the real killer / thief was"},
+            {"Risultato": 10, "Checked": false, "Testo": "YOUR secret"},
+            {"Risultato": 11, "Checked": false, "Testo": "more about the monster than he should"},
+            {"Risultato": 12, "Checked": false, "Testo": "how to get what they want from you"},
+            {"Risultato": 13, "Checked": false, "Testo": "where it is hidden"},
+            {"Risultato": 14, "Checked": false, "Testo": "the person's true identity"},
+            {"Risultato": 15, "Checked": false, "Testo": "who has it"},
+            {"Risultato": 16, "Checked": false, "Testo": "who wants it"},
+            {"Risultato": 17, "Checked": false, "Testo": "what you did in that last city"},
+            {"Risultato": 18, "Checked": false, "Testo": "who is keeping track of your actions"},
+            {"Risultato": 19, "Checked": false, "Testo": "who those people that just came into town are"},
+            {"Risultato": 20, "Checked": false, "Testo": "Many secrets! Roll 1d4+1 secrets, ignoring rolls of 20", "Reroll": [2,5,[20]]}
+        ]}
+}

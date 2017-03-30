@@ -1,8 +1,9 @@
 body{
     font-size: 11px;
+    padding-top: 70px;
 }
 
-h3:first-of-type{
+h3.primo{
     margin-top:0px;
 }
 

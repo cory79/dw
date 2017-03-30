@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>One-Roll Npc generator</title>
+    <body ng-app="DWOneRoll">
+
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img style="max-height: 20px;" class="img img-responsive" alt="" src="icon.png" /></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed = true">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Genera mostro</a></li>
+                        <li class="active"><a href="oneRollNpc.html">One-Roll Npc</a></li>
+                        <li><a href="oneRollMonster.html">One-Roll Monster</a></li>
+                        <li><a href="oneRollDungeon.html">One-Roll Dungeon</a></li>
+                        <li><a href="oneRollRegion.html">One-Roll Region</a></li>
+                        <li><a href="Classi/index.html">Classi base</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+        </nav>
+
+        <div class="container" ng-controller="userController">
+            <h1 class="text-center noprint">One-Roll Npc generator</h1>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 printable">
+
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input type="text" ng-model="OneRollThing.Nome" class="form-control text-center"  />
+                    </div>     
+                    <div class="form-group">
+                        <label>Descrizione</label>
+                        <textarea ng-model="OneRollThing.Descrizione" class="form-control msd-elastic alte"  ></textarea>
+                    </div>  
+
+
+                    <div ng-repeat="elemento in dado_list"  >
+                        <div class="form-group">
+                            <label><span ng-bind="elemento.Titolo"></span></label>
+                            <textarea  ng-model="OneRollThing[elemento.Input]" class="form-control msd-elastic" ></textarea>
+                        </div> 
+                    </div>
+
+                    <div class="text-center noprint">
+                        <button class="btn" ng-click="genera()" >Genera</button>
+                        <button class="btn" onclick="window.print()" >Stampa</button>
+                        <button class="btn" ng-click="svuota()" >Svuota</button>
+                    </div>
+                    <br/>
+                    <div class="text-center noprint">
+                        <div ng-repeat="el in dado"  >
+                            <button class="col-xs-4 col-sm-4 col-md-2 col-lg-2 btn" ng-click="nuovamente(el)" >Tira <span ng-bind="el"></span></button>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 noprint">
+                    <div class="row">
+                        <div ng-repeat="elemento in dado_list"  >
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 ">
+                                <h3>
+                                    <span ng-bind="elemento.Dado"></span>
+                                    <span ng-bind="elemento.Titolo"></span>
+                                </h3>
+                                <div ng-repeat="el in OneRollThing[elemento.Lista]"  >
+                                    <div ng-if="elemento.Tipo === 'radio'">
+                                        <input type="radio" name="{{elemento.Dado}}"  ng-value="{{$index}}" ng-model="OneRollThing[elemento.Scelta]" ng-click="imposta(elemento.Dado)" />
+                                        <span ng-bind-html="el.Testo | sanitize"></span>
+                                    </div>
+                                    <div ng-if="elemento.Tipo === 'checkbox'">
+                                        <input type="checkbox" ng-model="el.Checked" ng-click="imposta(elemento.Dado)" />
+                                        <span ng-bind-html="el.Testo | sanitize"></span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+        <script src="js/script.js"></script>
+        <script>
+            var FiledaCaricare = "json/oneRollNpc.json";
+//            var FiledaCaricare = "json/oneRollNpcJson.html";
+        </script>
+        <script src="js/scriptOneRoll.js"></script>
+
+        <script src="js/ui-bootstrap-tpls-2.5.0.min.js"></script>
+
+        <script src="js/elastic.js"></script>
+
+        <script type="text/javascript">
+            google_color_border = "#003399";
+            google_color_bg = "#FFFFFF";
+            google_color_link = "#0033CC";
+            google_color_url = "#008000";
+            google_color_text = "#000000";
+            google_ui_features = "rc:0";
+            document.write('<s' + 'cript type="text/javascript" src="http://ad.altervista.org/js.ad/size=300X250/?ref=' + encodeURIComponent(location.hostname + location.pathname) + '&r=' + new Date().getTime() + '"></s' + 'cript>');
+        </script>
+
+        <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-19342166-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+
+    </body>
+</html>

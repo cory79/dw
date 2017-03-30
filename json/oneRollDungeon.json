@@ -1,0 +1,97 @@
+
+{
+    "dado_list": [
+        {"Dado": "d4", "Lista": "d4_list", "Input": "d4_input", "Scelta": "d4_scelta", "Tipo": "radio", "Titolo": "How is the entrance hidden/guarded?"},
+        {"Dado": "d6", "Lista": "d6_list", "Input": "d6_input", "Scelta": "d6_scelta", "Tipo": "radio", "Titolo": "What is/was the function?"},
+        {"Dado": "d8", "Lista": "d8_list", "Input": "d8_input", "Scelta": "d8_scelta", "Tipo": "radio", "Titolo": "Who built it?"},
+        {"Dado": "d10", "Lista": "d10_list", "Input": "d10_input", "Scelta": "d10_scelta", "Tipo": "checkbox", "Titolo": "What's worth finding here?"},
+        {"Dado": "d12", "Lista": "d12_list", "Input": "d12_input", "Scelta": "d12_scelta", "Tipo": "radio", "Titolo": "What dangers exist inside?"},
+        {"Dado": "d20", "Lista": "d20_list", "Input": "d20_input", "Scelta": "d20_scelta", "Tipo": "radio", "Titolo": "What interesting feature does it have?"}],
+    "OneRollThing": {
+        "Nome": "",
+        "Descrizione": "",
+        "d4_input": "",
+        "d6_input": "",
+        "d8_input": "",
+        "d10_input": "",
+        "d12_input": "",
+        "d20_input": "",
+        "d4_scelta": -1,
+        "d6_scelta": -1,
+        "d8_scelta": -1,
+        "d10_scelta": -1,
+        "d12_scelta": -1,
+        "d20_scelta": -1,
+        "d4_list": [
+            {"Risultato": 1, "Checked": false, "Testo": "Well hidden by nature or design"},
+            {"Risultato": 2, "Checked": false, "Testo": "There's a magical lock"},
+            {"Risultato": 3, "Checked": false, "Testo": "Local or placed guardian"},
+            {"Risultato": 4, "Checked": false, "Testo": "All of the above"}
+        ],
+        "d6_list": [
+            {"Risultato": 1, "Checked": false, "Testo": "Mine / Prison"},
+            {"Risultato": 2, "Checked": false, "Testo": "Tomb / Crypt"},
+            {"Risultato": 3, "Checked": false, "Testo": "Lair / Den"},
+            {"Risultato": 4, "Checked": false, "Testo": "Hideout / Sanctuary"},
+            {"Risultato": 5, "Checked": false, "Testo": "Shrine / Temple"},
+            {"Risultato": 6, "Checked": false, "Testo": "Archive / Library"}
+        ],
+        "d8_list": [
+            {"Risultato": 1, "Checked": false, "Testo": "Wizard / Sorcerer / Witch"},
+            {"Risultato": 2, "Checked": false, "Testo": "Exotic Race"},
+            {"Risultato": 3, "Checked": false, "Testo": "Elves / Humans"},
+            {"Risultato": 4, "Checked": false, "Testo": "Dwarves / Gnomes / Halflings"},
+            {"Risultato": 5, "Checked": false, "Testo": "Nature (Cave, Grove, etc.)"},
+            {"Risultato": 6, "Checked": false, "Testo": "Religious Order / Cult"},
+            {"Risultato": 7, "Checked": false, "Testo": "Monarch / Warlord"},
+            {"Risultato": 8, "Checked": false, "Testo": "Goblinoids"}
+        ],
+        "d10_list": [
+            {"Risultato": 1, "Checked": false, "Testo": "Something that would be valuable to the builder"},
+            {"Risultato": 2, "Checked": false, "Testo": "Items useful to the dungeon's function"},
+            {"Risultato": 3, "Checked": false, "Testo": "Evidence about what's REALLY going on"},
+            {"Risultato": 4, "Checked": false, "Testo": "A magic item that isn't what it seems"},
+            {"Risultato": 5, "Checked": false, "Testo": "A cache of weapons or armor"},
+            {"Risultato": 6, "Checked": false, "Testo": "Someone who needs your help"},
+            {"Risultato": 7, "Checked": false, "Testo": "Something someone else wants"},
+            {"Risultato": 8, "Checked": false, "Testo": "Something someone wants to remain hidden"},
+            {"Risultato": 9, "Checked": false, "Testo": "Secrets that will make you a target"},
+            {"Risultato": 10, "Checked": false, "Testo": "Roll again... but it's no longer there!", "Reroll": 1}
+        ],
+        "d12_list": [
+            {"Risultato": 1, "Checked": false, "Testo": "Unusual traps"},
+            {"Risultato": 2, "Checked": false, "Testo": "Creatures you've never seen before"},
+            {"Risultato": 3, "Checked": false, "Testo": "Structural instability"},
+            {"Risultato": 4, "Checked": false, "Testo": "Dangerous flora grows inside"},
+            {"Risultato": 5, "Checked": false, "Testo": "Clouds of toxins appear throughout"},
+            {"Risultato": 6, "Checked": false, "Testo": "Mild acid drips from above, pooling in places"},
+            {"Risultato": 7, "Checked": false, "Testo": "Movement is treacherous or difficult (webs, ice, etc)"},
+            {"Risultato": 8, "Checked": false, "Testo": "Fallen rubble blocks passages and hides vermin"},
+            {"Risultato": 9, "Checked": false, "Testo": "The air is unnaturally cold or hot"},
+            {"Risultato": 10, "Checked": false, "Testo": "Whispers in the darkness..."},
+            {"Risultato": 11, "Checked": false, "Testo": "Waves of sleepiness assault the party"},
+            {"Risultato": 12, "Checked": false, "Testo": "Swarms of carnivorous vermin"}
+        ],
+        "d20_list": [
+            {"Risultato": 1, "Checked": false, "Testo": "The place is MUCH larger than it appears"},
+            {"Risultato": 2, "Checked": false, "Testo": "Evidence of dead adventurers is common"},
+            {"Risultato": 3, "Checked": false, "Testo": "Runes and scripts cover every surface"},
+            {"Risultato": 4, "Checked": false, "Testo": "Strange artwork looks out of place"},
+            {"Risultato": 5, "Checked": false, "Testo": "Way more sleeping quarters than seem necessary"},
+            {"Risultato": 6, "Checked": false, "Testo": "The place is well lit, despite no obvious light source"},
+            {"Risultato": 7, "Checked": false, "Testo": "Long stairways or ramps that seem to go down forever"},
+            {"Risultato": 8, "Checked": false, "Testo": "A deep pit with a faint green glow at the bottom"},
+            {"Risultato": 9, "Checked": false, "Testo": "The air gets thinner as farther you go from the entrance"},
+            {"Risultato": 10, "Checked": false, "Testo": "Lots of alcoves with statues and/or shrines"},
+            {"Risultato": 11, "Checked": false, "Testo": "Mirrors... everywhere..."},
+            {"Risultato": 12, "Checked": false, "Testo": "A torture chamber that seems to not have been used"},
+            {"Risultato": 13, "Checked": false, "Testo": "Evidence of battle everywhere"},
+            {"Risultato": 14, "Checked": false, "Testo": "You're never quite sure what you're walking on"},
+            {"Risultato": 15, "Checked": false, "Testo": "What did they say this was built for?"},
+            {"Risultato": 16, "Checked": false, "Testo": "A reflecting pool used for divination"},
+            {"Risultato": 17, "Checked": false, "Testo": "A portal that no-one was sure really existed"},
+            {"Risultato": 18, "Checked": false, "Testo": "A VERY long hallway that never seems to end..."},
+            {"Risultato": 19, "Checked": false, "Testo": "Illusory walls and false doorways make navigation difficult"},
+            {"Risultato": 20, "Checked": false, "Testo": "The entire building is eerily quiet"}
+        ]}
+}
