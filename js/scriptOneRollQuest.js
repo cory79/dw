@@ -27,16 +27,6 @@ angular.module("DWOneRoll", [
                             $scope.OneRollThing[el.Input] = $scope.OneRollThing[el.Lista][$scope.OneRollThing[el.Scelta]].Testo;
                         }
                     };
-                    $scope.lancio = function (el){
-                        numeroDado = el.replace("d", "");
-                        risultato = getRandomInt(1, numeroDado );
-                        if(typeof $scope.OneRollThing.lancioDadi === 'undefined'){
-                            $scope.OneRollThing.lancioDadi = el + ' -> ' + risultato;
-                        }else{
-                            $scope.OneRollThing.lancioDadi += '\n' + el + ' -> ' + risultato;
-                        }
-                        
-                    };
                     $scope.LancioDado = function (el, ignorare) {
                         dado = el.Dado;
                         numeroDado = dado.replace("d", "");
